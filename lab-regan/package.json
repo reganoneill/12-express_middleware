@@ -1,0 +1,27 @@
+{
+  "name": "lab-regan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "DEBUG='drink*' node server.js",
+    "test": "DEBUG='drink*' ./node_modules/mocha/bin/mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.7",
+    "body-parser": "^1.16.1",
+    "debug": "^2.6.1",
+    "express": "^4.14.1",
+    "http-errors": "^1.6.1",
+    "morgan": "^1.8.1",
+    "node-uuid": "^1.4.7"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "superagent": "^3.5.0"
+  }
+}
