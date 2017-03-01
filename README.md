@@ -1,28 +1,19 @@
-![CF](https://camo.githubusercontent.com/70edab54bba80edb7493cad3135e9606781cbb6b/687474703a2f2f692e696d6775722e636f6d2f377635415363382e706e67) Lab 12: Single Resource Express API
+### Single Resource Express API
 ===
 
-## To Submit this Assignment
-  * Fork this repository
-  * Write all of your code in a directory named `lab-` + `<your name>` **e.g.** `lab-brian`
-  * Push to your repository
-  * Submit a pull request to this repository
-  * Submit a link to your PR in canvas
-  * Write a question and observation on canvas
-
-## Include
-  * `package.json`
-  * `.eslintrc`
-  * `gulpfile.js`
-  * `.gitignore`
-  * `README.md`
 
 ## Description
-  * Create a single resource `express` API that can handle **GET**, **POST**, and **PUT** requests
-  * Use the `http-errors` module to create new errors and associate them with a proper status code
-  * Create an `error-middleware` module to handle errors and *use* it in your server file
-  * Create a `cors-middleware` module that will allow for public use of your API
-  * Create the `deleteItem` and `availIDs` methods and add them to your `storage` module
-    * these methods should be used to delete a resource (`deleteItem`) and return an array of id's from persisted resource filenames (`availIDs`)
-  * Create the `updateNote`, `fetchNote`, and `fetchIDs` static methods as part of your `Note` model
-  * Create a series of `note-route-tests` to test your **GET**, **POST**, and **PUT** routes
-    * **hint:** *you'll want to use the `before` and `after` hooks provided by `mocha` in order to create a test note and delete the note after the test has completed*
+  * This program creates a single resource `express` API that can handle **GET**, **POST**, **PUT**, and **DELETE** requests. It offers a file system layer of persistence.
+  * It incorporates robust modularity and middleware to allow this program to scale - with the idea that more resources can be added easily and plugged into the express server efficiently.
+  * It comes built with a one resource, 'Drink', which requires a temp, size, and name property from the user (each instance will also be assigned a randomly generated id property from ```node-uuid``` which can be used to access existing items in the filesystem).
+  * Using a Router instance from Express, the 'Drink' resource has custom endpoints which correspond to the Drink constructor. These endpoint methods then communicate to the Drink Router which then communicate with a storage file to handle any/all data creation.
+
+## Requirements
+  * Command line access
+  * Node.js
+  * npm
+
+## To Use
+  * Clone down this repo and run ```npm i``` to get all necessary dependencies.
+  * Review the last two sections of the description section to understand existing model and data flow.
+  * *Important* --- For file system persistence to work: Create a directory named 'data' at the root of this directory. Then go inside the 'data' directory and create an additional directory called 'drink'. Each model created will require its own aptly named folder within 'data'.
